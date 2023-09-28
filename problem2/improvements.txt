@@ -1,0 +1,21 @@
+############
+const [prices, setPrices] = useState({});
+improvement 1: price should not be initialised without type
+instead: const [prices, setPrices] = useState<{ [key: string]: number }>({});
+############
+const getPriority = (blockchain: any): number =>
+if list gets long, better to store these priority values in a hashmap or json file, for increased readability.
+############
+const sortedBalances = useMemo(() => {
+// code
+}, [balances, prices]);
+prices added to dependency array, meaning the memoised function will re-render every time the price changes
+even if price is unrelated to balances. remove
+############
+const formattedBalances = sortedBalances.map((balance: WalletBalance) => 
+unnecessary iteration. combine the formatting with the filter and sort functions, adding the new attribute
+'formatted' alongside filtering.
+############
+const rows = sortedBalances.map((balance: FormattedWalletBalance, index: number) => {
+possibly abstract out the logic to render the WalletRow for improved readability.
+memoise the component so that it does not rerender for every change in balance, only when its balance changes
